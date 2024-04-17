@@ -1,0 +1,235 @@
+.userdiplay-container .overlap-group-wrapper {
+  background-color: #000000e8;
+  border-radius: 52px;
+  height: 675px;
+  left: 739px;
+  position: absolute;
+  top: 106px;
+  width: 675px;
+}
+
+.userdisplay-container {
+  background-color: #0099ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.userdisplay-container .overlap-wrapper {
+  background-color: #000000e8;
+  border-radius: 52px;
+  height: 675px;
+  left: 739px;
+  position: absolute;
+  top: 106px;
+  width: 675px;
+  background-color: var(--white);
+  height: 800px;
+  overflow: hidden;
+  width: 1280px;
+}
+
+.userdisplay-container .overlap {
+  height: 849px;
+  left: -181px;
+  position: relative;
+  top: -1px;
+  width: 1543px;
+}
+
+.userdisplay-container .group {
+  height: 848px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 1543px;
+}
+
+.userdisplay-container .overlap-group {
+  height: 800px;
+  left: 181px;
+  position: relative;
+  width: 1280px;
+}
+
+.userdisplay-container .rectangle {
+  background-color: #0099ff;
+  height: 335px;
+  left: 0;
+  position: absolute;
+  top: 465px;
+  width: 1280px;
+}
+
+.userdisplay-container .img {
+  height: 269px;
+  left: 0;
+  position: absolute;
+  top: 457px;
+  width: 1280px;
+}
+
+.userdisplay-container .vector-2 {
+  height: 268px;
+  left: 0;
+  position: absolute;
+  top: 443px;
+  width: 1280px;
+}
+
+.userdisplay-container .div {
+  background-color: #0099ff;
+  height: 474px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1280px;
+}
+
+.userdisplay-container .frame {
+  height: 681px;
+  left: 0;
+  position: absolute;
+  top: 119px;
+  width: 1280px;
+}
+
+.userdisplay-container .overlap-group-wrapper {
+  background-color: #000000e8;
+  border-radius: 52px;
+  height: 675px;
+  left: 739px;
+  position: absolute;
+  top: 106px;
+  width: 675px;
+}
+
+.userdisplay-container .rectangle-2 {
+  background-color: #000000a6;
+  border-radius: 35px;
+  height: 131px;
+  left: 86px;
+  position: absolute;
+  top: 465px;
+  width: 468px;
+}
+
+.userdisplay-container .ellipse {
+  height: 127px;
+  left: 261px;
+  position: absolute;
+  top: 471px;
+  width: 126px;
+}
+
+.userdisplay-container .red {
+  height: 56px;
+  left: 290px;
+  object-fit: cover;
+  position: absolute;
+  top: 506px;
+  width: 60px;
+}
+
+.userdisplay-container .skip-to-start-icon {
+  height: 151px;
+  left: 71px;
+  object-fit: cover;
+  position: absolute;
+  top: 459px;
+  width: 151px;
+}
+
+.userdisplay-container .skip-to-start-icon-2 {
+  height: 151px;
+  left: 417px;
+  object-fit: cover;
+  position: absolute;
+  top: 459px;
+  width: 152px;
+}
+
+.userdisplay-container .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Poppins", Helvetica;
+  font-size: 36px;
+  font-weight: 400;
+  height: 87px;
+  left: 235px;
+  letter-spacing: 0;
+  line-height: 60.5px;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  width: 251px;
+}
+
+.userdisplay-container .untitled-recovered {
+  height: 68px;
+  left: 210px;
+  object-fit: cover;
+  position: absolute;
+  top: 10px;
+  width: 64px;
+}
+
+.userdisplay-container .vector-3 {
+  height: 1px;
+  left: 181px;
+  mix-blend-mode: darken;
+  object-fit: cover;
+  position: absolute;
+  top: 84px;
+  width: 1280px;
+}
+
+.userdisplay-container .interactable {
+  cursor: pointer;
+}
+
+/*
+.userdisplay-container .button-signin-instance {
+  left: 1315px !important;
+  position: absolute !important;
+  top: 28px !important;
+}
+*/
+
+/*
+.userdisplay-container .primary-button-instance {
+  left: 1190px !important;
+  position: absolute !important;
+  top: 28px !important;
+}
+*/
+
+/*
+.userdisplay-container .headline {
+  -webkit-text-stroke: 3px #ffffff;
+  color: var(--headlines);
+  font-family: "Poppins", Helvetica;
+  font-size: 87px;
+  font-weight: 900;
+  left: 238px;
+  letter-spacing: -3.48px;
+  line-height: 96px;
+  position: absolute;
+  top: 169px;
+  width: 497px;
+}
+*/
+
+/*
+.overlap-group-wrapper .overlap-2 {
+  background-image: url(https://c.animaapp.com/2zr75fnR/img/rectangle-17.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 642px;
+  left: 17px;
+  position: relative;
+  top: 17px;
+  width: 642px;
+}
+*/
+

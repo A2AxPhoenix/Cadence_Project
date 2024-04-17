@@ -1,0 +1,15 @@
+.sidebar {
+  background-color: #0077CC;
+  width: 20%; /* or set a fixed width */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 60px; /* Adjust as needed */
+  height: 60px; /* Adjust as needed */
+}
