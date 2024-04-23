@@ -21,7 +21,21 @@ const users = [
         name: 'John Doe',
         image: 'rectangle-17@2x.png',
     },
-
+    {
+        id: 5,
+        name: 'John Doe',
+        image: 'rectangle-17@2x.png',
+    },
+    {
+        id: 6,
+        name: 'John Doe',
+        image: 'rectangle-17@2x.png',
+    },
+    {
+        id: 7,
+        name: 'John Doe',
+        image: 'rectangle-17@2x.png',
+    },
 ];
 
 const Sidebar = () => {
