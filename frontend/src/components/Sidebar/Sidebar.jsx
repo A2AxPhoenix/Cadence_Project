@@ -16,6 +16,12 @@ const users = [
         name: 'John Doe',
         image: 'rectangle-17@2x.png',
     },
+    {
+        id: 4,
+        name: 'John Doe',
+        image: 'rectangle-17@2x.png',
+    },
+
 ];
 
 const Sidebar = () => {
