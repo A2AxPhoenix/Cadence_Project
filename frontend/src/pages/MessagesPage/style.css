@@ -1,0 +1,282 @@
+.main-page {
+    background-color: #003D66;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .main-page .overlap-wrapper {
+    background-color: var(--white);
+    height: 800px;
+    overflow: hidden;
+    width: 1280px;
+  }
+  
+  .main-page .overlap {
+    border-radius: 52px;
+    height: 852px;
+    left: -30px;
+    position: relative;
+    top: -14px;
+    width: 1341px;
+  }
+  
+  .main-page .rectangle {
+    background: #0099ff;
+    height: 800px;
+    left: 30px;
+    position: absolute;
+    top: 14px;
+    width: 1280px;
+  }
+  
+  .main-page .group {
+    background-color: #00000099;
+    border-radius: 52px;
+    height: 852px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1341px;
+  }
+  
+  .main-page .div {
+    background-color: #0067ad;
+    border-radius: 17px;
+    height: 105px;
+    left: 45px;
+    position: absolute;
+    top: 28px;
+    width: 107px;
+  }
+  
+  .main-page .img {
+    height: 630px;
+    left: 45px;
+    position: absolute;
+    top: 148px;
+    width: 107px;
+  }
+  
+  .main-page .ellipse {
+    height: 80px;
+    left: 58px;
+    object-fit: cover;
+    position: absolute;
+    top: 41px;
+    width: 80px;
+  }
+  
+  .main-page .ellipse-2 {
+    height: 80px;
+    left: 58px;
+    object-fit: cover;
+    position: absolute;
+    top: 255px;
+    width: 80px;
+  }
+  
+  .main-page .ellipse-3 {
+    height: 80px;
+    left: 58px;
+    object-fit: cover;
+    position: absolute;
+    top: 343px;
+    width: 80px;
+  }
+  
+  .main-page .ellipse-4 {
+    height: 80px;
+    left: 58px;
+    object-fit: cover;
+    position: absolute;
+    top: 431px;
+    width: 80px;
+  }
+  
+  .main-page .ellipse-5 {
+    height: 80px;
+    left: 58px;
+    object-fit: cover;
+    position: absolute;
+    top: 167px;
+    width: 80px;
+  }
+  
+  .main-page .rectangle-2 {
+    background-color: #66666666;
+    border-radius: 32px;
+    height: 45px;
+    left: 189px;
+    position: absolute;
+    top: 733px;
+    width: 716px;
+  }
+  
+  .main-page .rectangle-3 {
+    background-color: #d9d9d9;
+    border-radius: 32px;
+    height: 45px;
+    left: 662px;
+    position: absolute;
+    top: 641px;
+    width: 243px;
+  }
+  
+  .main-page .rectangle-4 {
+    background-color: #d9d9d9;
+    border-radius: 32px;
+    height: 45px;
+    left: 189px;
+    position: absolute;
+    top: 568px;
+    width: 239px;
+  }
+  
+  .main-page .rectangle-5 {
+    background-color: #d9d9d9;
+    border-radius: 32px;
+    height: 67px;
+    left: 189px;
+    position: absolute;
+    top: 478px;
+    width: 331px;
+  }
+  
+  .main-page .rectangle-6 {
+    background-color: #d9d9d9;
+    border-radius: 32px;
+    height: 67px;
+    left: 574px;
+    position: absolute;
+    top: 380px;
+    width: 331px;
+  }
+  
+  .main-page .rectangle-7 {
+    background-color: #121212e8;
+    border-radius: 52px;
+    height: 729px;
+    left: 943px;
+    position: absolute;
+    top: 49px;
+    width: 338px;
+  }
+  
+  .main-page .frame {
+    height: 729px;
+    left: 990px;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 49px;
+    width: 245px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .main-page .overlap-group {
+    background-color: #242424;
+    border-radius: 8px;
+    height: 216px;
+    left: 1px;
+    position: absolute;
+    top: 656px;
+    width: 243px;
+  }
+  
+  .main-page .text-wrapper {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    height: 19px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: 21px;
+    white-space: nowrap;
+    width: 142px;
+  }
+  
+  .main-page .passionate-about {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 15px;
+    font-weight: 300;
+    height: 140px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 52px;
+    width: 187px;
+  }
+  
+  .main-page .rectangle-8 {
+    height: 209px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 889px;
+    width: 243px;
+  }
+  
+  .main-page .overlap-group-2 {
+    height: 305px;
+    left: 7px;
+    position: absolute;
+    top: 337px;
+    width: 240px;
+  }
+  
+  .main-page .img-2 {
+    height: 233px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 233px;
+  }
+  
+  .main-page .text-wrapper-2 {
+    color: #e2e2e2;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    height: 53px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: 252px;
+    white-space: nowrap;
+    width: 220px;
+  }
+  
+  .main-page .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 28px;
+    font-weight: 500;
+    height: 53px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: 226px;
+    white-space: nowrap;
+    width: 240px;
+  }
+  
+  .main-page .overlap-2 {
+    height: 279px;
+    left: 7px;
+    position: absolute;
+    top: 37px;
+    width: 240px;
+  }
+  
+  
