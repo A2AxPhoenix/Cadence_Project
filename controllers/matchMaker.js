@@ -31,8 +31,13 @@ const getUsers = async (req, res) => {
             //}
         }
 
+        const responseFromServer = {
+            "similarUsers": removedCurrUserArray,
+            "matchedUsers": currentUser.matchedUsers
+        }
+
         console.log('\n\n------------getTotalUsers after checking if a user exists in liked/disliked users and checking for current user in response------------\n', removedCurrUserArray);
-        res.send(removedCurrUserArray);
+        res.send(responseFromServer);
 
     } catch (err) {
         console.log(err.message)
