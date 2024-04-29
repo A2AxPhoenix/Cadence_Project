@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import SquareDisplay from '../../components/SquareDisplay/SquareDisplay';
+//import SquareDisplay from '../../components/SquareDisplay/SquareDisplay';
+import UserDisplay from '../../components/UserDisplay/UserDisplay';
 import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 import PhoneDisplay from '../../components/PhoneDisplay/PhoneDisplay';
 import "./style.css";
@@ -37,7 +38,7 @@ export default function MainPage() {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getProfileData();
-            const new_profilepic = data.profilePic[0];
+            const new_profilepic = data?.profilePic[0];
             setProfilePicture(new_profilepic);
             setUserData(data);
         };
@@ -54,11 +55,7 @@ export default function MainPage() {
                     <div className="sidebar-dashboard">
                         <Sidebar />
                     </div>
-                    <div className="squaredisplay-dashboard">
-                        <SquareDisplay userData={userData} />
-                    </div>
-                    <div className="phonedisplay-dashboard">
-                    </div>
+                    <UserDisplay userData={userData} />
                 </div>
             </div>
         </div>
