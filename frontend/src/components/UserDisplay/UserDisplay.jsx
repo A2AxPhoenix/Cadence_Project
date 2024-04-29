@@ -87,6 +87,9 @@ const handleEditInfoClick = () => {
                                 <NextSVGButton />
                             </button>
                         )}
+                        <div className="controls">
+                            <Controls />
+                        </div>
                         </div>
                         <div className="PhoneFrame">
                             <div className="PhoneBackGround">

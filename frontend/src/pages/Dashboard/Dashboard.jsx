@@ -31,16 +31,39 @@ const getProfileData = async (req, res) => {
     }
 }
 
+const getPossibleMatches = async (req, res) => {
+    const baseURL = "http://localhost:5501/dashboard";
+    try {
+        const possibleMatches = await fetch(baseURL, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if (possibleMatches.ok) {
+            const matchesObject = await possibleMatches.json();
+            console.log("Possible matches:", matchesObject);
+        }
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
+}
+
 export default function MainPage() {
     const [userData, setUserData] = useState(null);
+    const [possibleMatchData, setPossibleMatchData] = useState(null);
     const [profilePicture, setProfilePicture] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await getProfileData();
+            const matchData = await getPossibleMatches();
             const new_profilepic = data?.profilePic[0];
             setProfilePicture(new_profilepic);
             setUserData(data);
+            setPossibleMatchData(matchData);
         };
         fetchData();
     }, []);
