@@ -5,8 +5,9 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import TestPage from './pages/TestPage/TestPage';
 import OnboardingPage from './pages/OnboardingPage/OnboardingPage';
 import Profile from './pages/Profile/Profile'; 
-import MessagesPage from './pages/MessagesPage/MessagesPage';
+//import MessagesPage from './pages/MessagesPage/MessagesPage';
 //import EditProfile from './pages/Profile/Edit/Edit'; 
+//<Route path="/messages" element={ <MessagesPage />} />
 import './style.css';
 
 // This is only here because we cant seem to comment in the return
@@ -19,7 +20,6 @@ const App = () => {
         <Route exact path="/" element={ <LandingPage />} />
         <Route path="/onboarding" element={ <OnboardingPage />} />
         <Route path="/dashboard" element={ <Dashboard />} />
-        <Route path="/messages" element={ <MessagesPage />} />
         <Route path="/profile" element={ <Profile />} />
         <Route path="/test" element={ <TestPage/>} />
       </Routes>

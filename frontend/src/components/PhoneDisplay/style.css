@@ -1,0 +1,218 @@
+.phonedisplay {
+    height: 738px;
+    left: 913px;
+    position: absolute;
+    top: 26px;
+    width: 338px;
+}
+
+.phonedisplay-backdrop {
+    background-color: #121212e8;
+    border-radius: 52px;
+    height: 729px;
+    left: 0;
+    position: absolute;
+    top: 9px;
+    width: 338px;
+}
+
+.phonedisplay-screen {
+    height: 628px;
+    left: 47px;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 40px;
+    width: 245px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.phonedisplay-aboutme-box {
+    background-color: #242424;
+    border-radius: 8px;
+    height: 216px;
+    left: 1px;
+    position: absolute;
+    top: 359px;
+    width: 243px;
+}
+
+.phonedisplay-aboutme-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    height: 19px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: 21px;
+    white-space: nowrap;
+    width: 142px;
+}
+
+.phonedisplay-passionate-about {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 15px;
+    font-weight: 300;
+    height: 140px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 52px;
+    width: 187px;
+}
+
+.phonedisplay-favorite-genres-box {
+    background-color: #242424;
+    border-radius: 8px;
+    height: 169px;
+    left: 1px;
+    position: absolute;
+    top: 818px;
+    width: 243px;
+}
+
+.phonedisplay-favorite-genres-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    height: 19px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: 0px;
+    white-space: nowrap;
+    width: 163px;
+}
+
+.phonedisplay-favorite-genres-one {
+    background-color: #242424;
+    border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    border-color: #c0c0c0;
+    border-radius: 10px;
+    height: 18px;
+    left: 17px;
+    position: absolute;
+    top: 57px;
+    width: 61px;
+}
+
+.phonedisplay-favorite-genres-one-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    height: 9px;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: -21px;
+    white-space: nowrap;
+    width: 34px;
+}
+
+.phonedisplay-favorite-genres-two {
+    background-color: #242424;
+    border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    border-color: #c0c0c0;
+    border-radius: 10px;
+    height: 18px;
+    left: 84px;
+    position: absolute;
+    top: 57px;
+    width: 61px;
+}
+
+.phonedisplay-favorite-genres-two-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    height: 9px;
+    left: 18px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: -21px;
+    white-space: nowrap;
+    width: 28px;
+}
+
+.phonedisplay-favorite-genres-three {
+    background-color: #242424;
+    border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    border-color: #c0c0c0;
+    border-radius: 10px;
+    height: 18px;
+    left: 17px;
+    position: absolute;
+    top: 90px;
+    width: 88px;
+}
+
+.phonedisplay-favorite-genres-three-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    height: 9px;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: -21px;
+    white-space: nowrap;
+    width: 56px;
+}
+
+.phonedisplay-favorite-genres-four {
+    background-color: #242424;
+    border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    border-color: #c0c0c0;
+    border-radius: 10px;
+    height: 18px;
+    left: 17px;
+    position: absolute;
+    top: 123px;
+    width: 83px;
+}
+
+.phonedisplay-favorite-genres-four-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    height: 9px;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: 60.5px;
+    position: absolute;
+    top: -21px;
+    white-space: nowrap;
+    width: 59px;
+}
