@@ -44,6 +44,7 @@ const getPossibleMatches = async (req, res) => {
         if (possibleMatches.ok) {
             const matchesObject = await possibleMatches.json();
             console.log("Possible matches:", matchesObject);
+            return matchesObject;
         }
     } catch (err) {
         console.log(err);
@@ -64,6 +65,7 @@ export default function MainPage() {
             setProfilePicture(new_profilepic);
             setUserData(data);
             setPossibleMatchData(matchData);
+            console.log("possibled matches check:", possibleMatchData);
         };
         fetchData();
     }, []);
@@ -76,7 +78,7 @@ export default function MainPage() {
                         <img className="profilepic-dashboard" alt={`${userData?.username}'s picture`} src={profilePicture || "https://c.animaapp.com/I2nDhD6p/img/ellipse-7@2x.png"} />
                     </div>
                     <div className="sidebar-dashboard">
-                        <Sidebar />
+                        <Sidebar possibleMatches={possibleMatchData}/>
                     </div>
                     <UserDisplay userData={userData} />
                 </div>

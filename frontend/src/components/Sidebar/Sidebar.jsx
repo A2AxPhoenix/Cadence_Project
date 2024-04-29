@@ -38,12 +38,16 @@ const users = [
     },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ possibleMatches }) => {
+    const users = possibleMatches && possibleMatches.matchedUsers ? possibleMatches.matchedUsers : [];
+    console.log("users in sidebar:", users);
+    const defaultImage = "uploads/default.jpeg"; 
+
     return (
         <div className="sidebar">
             {users.map((user, index) => (
                 <div key={index} className="user">
-                    <img src={user.image} alt={user.name} className="avatar" />
+                    <img src={user.image || defaultImage} alt={user.name} className="avatar" />
                 </div>
             ))}
         </div>
