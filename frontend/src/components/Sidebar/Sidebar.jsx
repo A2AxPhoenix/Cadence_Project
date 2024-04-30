@@ -1,29 +1,26 @@
-import './style.css'; 
+import './style.css';
+import React from 'react';
 
-const users = [
-    {
-        id: 1,
-        name: 'John Doe',
-        image: 'rectangle-17@2x.png',
-    },
-    {
-        id: 2,
-        name: 'John Doe',
-        image: 'rectangle-17@2x.png',
-    },
-    {
-        id: 3,
-        name: 'John Doe',
-        image: 'rectangle-17@2x.png',
-    },
-];
+const Sidebar = ({ possibleMatches, onUserClick }) => {
+    const matchedUsers = possibleMatches?.matchedUsers || [];
+    const similarUsers = possibleMatches?.similarUsers || [];
+    
+    const getMatchingUserDetails = () => {
+        const matchedUsernames = new Set(matchedUsers);
+        return similarUsers.filter(user => matchedUsernames.has(user.username));
+    };
 
-const Sidebar = () => {
+    const matchingUsersDetails = getMatchingUserDetails();
+    console.log("Matched user details:", matchingUsersDetails);
+
+    const defaultImage = "uploads/default.jpeg"; 
+
     return (
         <div className="sidebar">
-            {users.map((user, index) => (
+            {matchingUsersDetails.map((user, index) => (
                 <div key={index} className="user">
-                    <img src={user.image} alt={user.name} className="avatar" />
+                    <img src={(user.profilePic && user.profilePic.length > 0) ? user.profilePic[0] : defaultImage} alt={user.name || "User"} className="avatar" 
+                     onClick={() => onUserClick(user)}/>
                 </div>
             ))}
         </div>

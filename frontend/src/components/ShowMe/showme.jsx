@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import './style.css'; // Update with the correct path to your CSS file
 
-const AudienceSelection = () => {
+const AudienceSelection = ({ onSelect }) => {
   const [selectedAudience, setSelectedAudience] = useState('');
 
   const handleSelectAudience = (audience) => {
     setSelectedAudience(audience);
-    // Additional logic for when an audience is selected
+    onSelect(audience);  // Call the passed onSelect function with the new audience
   };
 
   return (

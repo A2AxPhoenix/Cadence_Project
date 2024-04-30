@@ -16,7 +16,7 @@ const getUsers = async (req, res) => {
         let currentUser = await User.findOne(
             { username }
         );
-        let usersTopGenre = currentUser.topGenre;
+        let usersTopGenre = currentUser.topGenre[0];
         const getTotalUsers = await User.find(
             { "topGenre": usersTopGenre }
         )
