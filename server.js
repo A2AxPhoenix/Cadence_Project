@@ -27,7 +27,7 @@ app.use(cookieParser())
 app.use(express.json()) //parses the data in POST and PUT requests which allows us to extract information from the request body
 app.use(express.urlencoded({ extended: true }))
 
-app.use(express.static('views'));
+//app.use(express.static('views'));
 
 let username = "";
 let connectionNumber = 0;

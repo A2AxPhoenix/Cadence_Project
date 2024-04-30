@@ -55,6 +55,8 @@ export default function MainPage() {
     const [userData, setUserData] = useState(null);
     const [possibleMatchData, setPossibleMatchData] = useState(null);
     const [profilePicture, setProfilePicture] = useState(null);
+    const [isChatActive, setIsChatActive] = useState(false);
+    const [clickedUser, setClickedUser] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -71,6 +73,12 @@ export default function MainPage() {
     const defaultImage = "default.jpeg";
 
 
+    const handleUserSelect = (user) => {
+        setIsChatActive(prev => !prev); // Correct way to toggle based on previous state
+        setClickedUser(user);
+        console.log("User clicked:", user);
+    };
+
     return (
         <div className="main-page">
             <div className="overlap-wrapper">
@@ -79,29 +87,11 @@ export default function MainPage() {
                         <img className="profilepic-dashboard" alt={`${userData?.username || ''}'s picture`} src={profilePicture || defaultImage } />
                     </div>
                     <div className="sidebar-dashboard">
-                        {possibleMatchData && <Sidebar possibleMatches={possibleMatchData}/>}
+                        {possibleMatchData && <Sidebar possibleMatches={possibleMatchData} onUserClick={handleUserSelect}/>}
                     </div>
-                    {possibleMatchData && <UserDisplay userData={possibleMatchData} />}
+                    {possibleMatchData && <UserDisplay userData={possibleMatchData} isChatActiveState={isChatActive} clickedUserProp={clickedUser} />}
                 </div>
             </div>
         </div>
     );
-
-    /*
-    return (
-        <div className="main-page">
-            <div className="overlap-wrapper">
-                <div className="overlap">
-                    <div className="profilepic-box-dashboard">
-                        <img className="profilepic-dashboard" alt={`${userData?.username}'s picture`} src={profilePicture || defaultImage } />
-                    </div>
-                    <div className="sidebar-dashboard">
-                        <Sidebar possibleMatches={possibleMatchData}/>
-                    </div>
-                    <UserDisplay userData={userData} />
-                </div>
-            </div>
-        </div>
-    );
-        */
 };

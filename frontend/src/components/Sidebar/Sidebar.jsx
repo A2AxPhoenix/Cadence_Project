@@ -1,7 +1,7 @@
 import './style.css';
 import React from 'react';
 
-const Sidebar = ({ possibleMatches }) => {
+const Sidebar = ({ possibleMatches, onUserClick }) => {
     const matchedUsers = possibleMatches?.matchedUsers || [];
     const similarUsers = possibleMatches?.similarUsers || [];
     
@@ -19,7 +19,8 @@ const Sidebar = ({ possibleMatches }) => {
         <div className="sidebar">
             {matchingUsersDetails.map((user, index) => (
                 <div key={index} className="user">
-                    <img src={(user.profilePic && user.profilePic.length > 0) ? user.profilePic[0] : defaultImage} alt={user.name || "User"} className="avatar" />
+                    <img src={(user.profilePic && user.profilePic.length > 0) ? user.profilePic[0] : defaultImage} alt={user.name || "User"} className="avatar" 
+                     onClick={() => onUserClick(user)}/>
                 </div>
             ))}
         </div>

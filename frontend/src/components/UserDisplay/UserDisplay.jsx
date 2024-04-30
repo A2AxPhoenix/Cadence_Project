@@ -1,54 +1,99 @@
 import React, { useState, useEffect } from 'react';
 import Controls from '../Controls/Controls'; 
-import './style.css'; // Make sure to create a MusicCard.css file for your styles
-
-import "./style.css";
+import ChatBox from '../ChatBox/ChatBox';
 import NextSVGButton from '../../components/NextPicture/NextPicture';
 import PrevSVGButton from '../../components/PrevPicture/PrevPicture';
 import { useNavigate } from 'react-router-dom';
+import "./style.css";
 
 
-export default function SquareDisplay({ userData }) {
+export default function SquareDisplay({ userData, isChatActiveState, clickedUserProp }) {
     const [similarUsers, setSimilarUsers] = useState([]);
     const [currentUserIndex, setCurrentUserIndex] = useState(0);
     const [currentPictures, setCurrentPictures] = useState([]);
     const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
     const [currentGenres, setCurrentGenres] = useState([]);
+    const [isChatActive, setIsChatActive] = useState(false);
     const [isShaking, setIsShaking] = useState(false);
+    const [clickedUser, setClickedUser] = useState(null);
     const navigate = useNavigate();
 
-    // Effect to handle updates based on userData
     useEffect(() => {
         if (userData && userData.similarUsers) {
             setSimilarUsers(userData.similarUsers);
-            // any other initialization based on userData
         }
     }, [userData]);
 
     useEffect(() => {
+        setIsChatActive(isChatActiveState);
+        setClickedUser(clickedUserProp);
+
+        // Update the user index only when a user is clicked and chat is activated
+        if (isChatActiveState && clickedUserProp) {
+            const index = similarUsers.findIndex(user => user.username === clickedUserProp.username);
+            if (index !== -1) {
+                setCurrentUserIndex(index);  // Ensure this user is set immediately when clicking
+            }
+        }
+    }, [isChatActiveState, clickedUserProp, similarUsers]);
+
+    useEffect(() => {
+        // Load data related to the current user index
         if (similarUsers[currentUserIndex]) {
             const user = similarUsers[currentUserIndex];
-            const userPictures = user.profilePic || default_pictures; // Assuming profilePic is an array of picture URLs
+            const userPictures = user.profilePic || default_pictures;
+            const userGenres = user.topGenre;
+            setCurrentPictures(userPictures);
+            setCurrentGenres(userGenres);
+            setCurrentPictureIndex(0);
+        }
+    }, [currentUserIndex, similarUsers]);
+
+
+    /*
+    useEffect(() => {
+        if (userData && userData.similarUsers) {
+            setSimilarUsers(userData.similarUsers);
+            setIsChatActive(isChatActiveState);
+            setClickedUser(clickedUserProp);
+        }
+        if (isChatActive && clickedUser) {
+            const index = similarUsers.findIndex(user => user.username === clickedUser.username);
+            if (index !== -1) {
+                setCurrentUserIndex(index);
+            }
+        }
+    }, [userData, isChatActiveState, clickedUserProp]);
+
+    useEffect(() => {
+        if (similarUsers[currentUserIndex]) {
+            const user = similarUsers[currentUserIndex];
+            const userPictures = user.profilePic || default_pictures; 
             const userGenres = user.topGenre;
             setCurrentPictures(userPictures);
             setCurrentGenres(userGenres);
             setCurrentPictureIndex(0); // Reset picture index to show the first picture of the new user
         }
     }, [currentUserIndex, similarUsers]);
+    */
+
 
     // Conditional rendering logic or additional effects here
     if (!userData || !userData.similarUsers) {
         return null; // or return null;
     }
 
-    console.log("similarUsers:", similarUsers);
-    console.log("currentGenres", currentGenres);
+    //console.log("similarUsers:", similarUsers);
+    //console.log("currentGenres", currentGenres);
+    console.log("Clicked user in userdisplay:", clickedUser);
 
     const default_pictures = [
         'https://c.animaapp.com/I2nDhD6p/img/rectangle-17.png',
         'https://c.animaapp.com/I2nDhD6p/img/ellipse-8@2x.png',
         'https://c.animaapp.com/I2nDhD6p/img/ellipse-10@2x.png',
     ];
+
+    const pictures = userData?.profilePic || default_pictures;
 
     const handleNextUser = () => {
         console.log("Next button clicked!");
@@ -66,8 +111,8 @@ export default function SquareDisplay({ userData }) {
         }
     };
 
-    console.log("profilePic:", userData?.proflePic)
-    const pictures = userData?.profilePic || default_pictures;
+
+    //console.log("profilePic:", userData?.proflePic)
 
     const handleClick = (event) => {
         const { clientX, currentTarget } = event;
@@ -143,7 +188,6 @@ export default function SquareDisplay({ userData }) {
         console.log("Navigating to Edit Info");
     };
 
-
     return (
         <div className="userdisplay">
             <div className="userdiplay-wrapper">
@@ -152,20 +196,27 @@ export default function SquareDisplay({ userData }) {
                         <div className='ProfileViewBackground'>
                             <div className='NameBackGround'></div>
                             <div className='text-wrapper'>{similarUsers[currentUserIndex]?.username || "Matthew"}, {similarUsers[currentUserIndex]?.age || "32"}</div>
-                            <img className="ProfilePicture1" alt="Profile" src={currentPictures[currentPictureIndex]} />
-                            {currentPictureIndex > 0 && (
-                                <button className="prev-button" onClick={handlePrevButtonClick} aria-label="Previous">
-                                    <PrevSVGButton />
-                                </button>
-                            )}
-                            {currentPictureIndex < pictures.length - 1 && (
-                                <button className="next-button" onClick={handleNextButtonClick} aria-label="Next">
-                                    <NextSVGButton />
-                                </button>
-                            )}
-                            <div className="controls">
-                                <Controls onNextUser={handleNextUser} onPrevUser={handlePrevUser} onHeartUser={handleHeartButtonClick} />
-                            </div>
+
+                            {isChatActive ? (
+                                <ChatBox messages={[]} onSendMessage={() => {}} />
+                            ) : (
+                                    <>
+                                        <img className="ProfilePicture1" alt="Profile" src={currentPictures[currentPictureIndex]} />
+                                        {currentPictureIndex > 0 && (
+                                            <button className="prev-button" onClick={() => setCurrentPictureIndex(currentPictureIndex - 1)} aria-label="Previous">
+                                                <PrevSVGButton />
+                                            </button>
+                                        )}
+                                        {currentPictureIndex < currentPictures.length - 1 && (
+                                            <button className="next-button" onClick={() => setCurrentPictureIndex(currentPictureIndex + 1)} aria-label="Next">
+                                                <NextSVGButton />
+                                            </button>
+                                        )}
+                                        <div className="controls">
+                                            <Controls onNextUser={handleNextUser} onPrevUser={handlePrevUser} onHeartUser={handleHeartButtonClick} />
+                                        </div>
+                                    </>
+                                )}
                         </div>
                         <div className="PhoneFrame">
                             <div className="PhoneBackGround">
