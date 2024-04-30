@@ -13,6 +13,7 @@ export default function SquareDisplay({ userData }) {
     const [currentUserIndex, setCurrentUserIndex] = useState(0);
     const [currentPictures, setCurrentPictures] = useState([]);
     const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
+    const [currentGenres, setCurrentGenres] = useState([]);
     const [isShaking, setIsShaking] = useState(false);
     const navigate = useNavigate();
 
@@ -28,7 +29,9 @@ export default function SquareDisplay({ userData }) {
         if (similarUsers[currentUserIndex]) {
             const user = similarUsers[currentUserIndex];
             const userPictures = user.profilePic || default_pictures; // Assuming profilePic is an array of picture URLs
+            const userGenres = user.topGenre;
             setCurrentPictures(userPictures);
+            setCurrentGenres(userGenres);
             setCurrentPictureIndex(0); // Reset picture index to show the first picture of the new user
         }
     }, [currentUserIndex, similarUsers]);
@@ -39,6 +42,7 @@ export default function SquareDisplay({ userData }) {
     }
 
     console.log("similarUsers:", similarUsers);
+    console.log("currentGenres", currentGenres);
 
     const default_pictures = [
         'https://c.animaapp.com/I2nDhD6p/img/rectangle-17.png',
@@ -174,24 +178,16 @@ export default function SquareDisplay({ userData }) {
                                     <div className="BioBackGround" />
                                     <div className="BioTitle">About me</div>
                                     <p className="Bio">
-                                        Passionate about music—every genre speaks to me. From Beethoven to The Beatles, my soul dances to
-                                        every beat and melody. Life&#39;s better with tunes.
+                                        {similarUsers[currentUserIndex]?.aboutMe}
                                     </p>
                                 </div>
                                 <div className="GenreBox">
                                     <div className="GenreTitle">Favorite Genres</div>
-                                    <div className="Genre1Outline">
-                                        <div className="Genre1">Rock</div>
-                                    </div>
-                                    <div className="Genre2Outline">
-                                        <div className="Genre2">Pop</div>
-                                    </div>
-                                    <div className="Genre3Outline">
-                                        <div className="Genre3">Reggae</div>
-                                    </div>
-                                    <div className="Genre4Outline">
-                                        <div className="Genre4">Hip-hop</div>
-                                    </div>
+                                    {currentGenres.map((genre, index) => (
+                                        <div key={index} className={`GenreOutline`}>
+                                            <div className={`GenreName`}>{genre}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

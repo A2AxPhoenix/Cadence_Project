@@ -34,7 +34,7 @@ const userSchema = new Schema({
         type: String
     },
     topGenre: {
-        type: String
+        type: [String]
     },
     likedUsers: {
         type: [String]
@@ -47,6 +47,9 @@ const userSchema = new Schema({
     },
     profilePic: {
         type: [String]
+    },
+    aboutMe: {
+        type: String
     },
     chats: {
         type: mongoose.Schema.Types.ObjectId    //might need to implement this on the client side. Will look into it further

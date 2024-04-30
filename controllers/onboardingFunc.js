@@ -10,12 +10,12 @@ const finishSignup = async (req, res) => {
         const token = req.cookies.token;
         const verified_token = jwt.verify(token, process.env.SECRET_STR);
         const { username } = verified_token;
-        const { firstname, topGenre, sex, sexualPreference, age, location } = req.body;
+        const { firstname, topGenre, sex, sexualPreference, age, location, aboutMe } = req.body;
         console.log("Received data for user:", username);
 
         const profilePics = req.files ? req.files.map(file => file.path) : [];
 
-        const update = { firstname, topGenre, sex, sexualPreference, age, location, profilePics };
+        const update = { firstname, topGenre, sex, sexualPreference, age, location, profilePics, aboutMe };
         console.log("Update data:", update);  // Log update data
         const findUser = await User.findOneAndUpdate(
             { username },

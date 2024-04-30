@@ -21,6 +21,7 @@ export default function OnboardingPage () {
     const [birthMonth, setBirthMonth] = useState('');
     const [birthDay, setBirthDay] = useState('');
     const [location, setLocation] = useState('');
+    const [aboutMe, setAboutMe] = useState('');
 
     // Function to handle the navigation
     const navigateToDashboard = () => {
@@ -40,11 +41,12 @@ export default function OnboardingPage () {
 
         // Append other form data
         formData.append('firstname', firstName);
-        formData.append('topGenre', genre);
+        genre.forEach(g => formData.append('topGenre', g));
         formData.append('sex', gender);
         formData.append('sexualPreference', audience);
         formData.append('age', age.toString());
         formData.append('location', location);
+        formData.append('aboutMe', aboutMe);
 
         const url = '/onboarding';
         try {
@@ -117,7 +119,7 @@ export default function OnboardingPage () {
     };
     const handleGenresSelect = (selectedGenres) => {
         console.log('Selected genres:', selectedGenres);
-        setGenre(selectedGenres[0]);
+        setGenre(selectedGenres);
         // Do something with the selected genres
         handleClosePopup(); // Call the function to close the popup
     };
@@ -274,6 +276,22 @@ export default function OnboardingPage () {
                             />
                         </div>
                     ))}
+
+                    <div className="about-me-frame">
+                        <div className="about-me-title">About Me</div>
+                        <textarea
+                            className="about-me-textarea"
+                            placeholder="Tell us something about yourself..."
+                            value={aboutMe}
+                            onChange={e => setAboutMe(e.target.value)}
+                            style={{
+                                width: '300px', // Set width as needed
+                                height: '100px', // Set height as needed
+                                padding: '10px', // Set padding as needed
+                                fontSize: '16px' // Set font size as needed
+                            }}
+                        ></textarea>
+                    </div>
 
                 </div>
             </div>

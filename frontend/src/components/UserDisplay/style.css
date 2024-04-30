@@ -149,6 +149,7 @@
     top: 52px;
     width: 187px;
 }
+/*
 .userdisplay .GenreBox {
     background-color: #242424;
     border-radius: 8px;
@@ -280,6 +281,44 @@
     white-space: nowrap;
     width: 59px;
 }
+*/
+
+.userdisplay .GenreBox {
+    background-color: #242424;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 10px;
+    width: 100%;
+    margin-top: 250px;
+}
+
+.userdisplay .GenreTitle {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif; /* Ensure font fallback */
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px; /* Space between title and genres */
+}
+
+.userdisplay .GenreOutline {
+    background-color: #242424;
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 5px;
+    padding: 2px 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Remove individual genre styles if all can be the same */
+
 .userdisplay .PlaylistImage {
     height: 209px;
     left: 1px;
