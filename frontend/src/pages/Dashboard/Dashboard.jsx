@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-//import SquareDisplay from '../../components/SquareDisplay/SquareDisplay';
 import UserDisplay from '../../components/UserDisplay/UserDisplay';
 import Sidebar from '../../components/Sidebar/Sidebar.jsx';
-import PhoneDisplay from '../../components/PhoneDisplay/PhoneDisplay';
 import "./style.css";
 
 const getProfileData = async (req, res) => {
