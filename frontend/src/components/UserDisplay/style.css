@@ -44,6 +44,7 @@
     left: 18px;
     object-fit: cover;
     position: absolute;
+    border-radius: 35px;
     top: 18px;
     width: 693px;
 }
@@ -59,7 +60,15 @@
     z-index: 1;
 }
 .userdisplay .text-wrapper {
-    z-index: 1;
+    position: absolute;  /* Ensure it's positioned relative to the first positioned ancestor */
+    top: 12%;  /* Center vertically inside the NameBackground */
+    left: 20%;  /* Center horizontally inside the NameBackground */
+    transform: translate(-50%, -50%);  /* Offset the element to the center from its top-left corner */
+    color: white;  /* Assuming you want the text color to be white */
+    z-index: 2;  /* Ensure it appears above the NameBackground */
+    font-size: 24px;  /* Example size, adjust as necessary */
+    width: 100%;  /* Make the width span the entire parent */
+    text-align: center;  /* Center text horizontally */
 }
 .userdisplay .PhoneFrame {
     height: 638px;
@@ -399,6 +408,7 @@ left: 0;
 }
 
 .edit-info-button {
+    display: block;
     position: absolute;
     bottom: 20px; /* Position at the bottom within the PhoneBackGround */
     left: 50%; /* Center horizontally */

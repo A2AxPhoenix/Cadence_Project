@@ -52,6 +52,7 @@ const getPossibleMatches = async (req, res) => {
     }
 }
 
+
 export default function MainPage() {
     const [userData, setUserData] = useState(null);
     const [possibleMatchData, setPossibleMatchData] = useState(null);
@@ -65,17 +66,36 @@ export default function MainPage() {
             setProfilePicture(new_profilepic);
             setUserData(data);
             setPossibleMatchData(matchData);
-            console.log("possibled matches check:", possibleMatchData);
         };
         fetchData();
     }, []);
+
+    const defaultImage = "default.jpeg";
+
 
     return (
         <div className="main-page">
             <div className="overlap-wrapper">
                 <div className="overlap">
                     <div className="profilepic-box-dashboard">
-                        <img className="profilepic-dashboard" alt={`${userData?.username}'s picture`} src={profilePicture || "https://c.animaapp.com/I2nDhD6p/img/ellipse-7@2x.png"} />
+                        <img className="profilepic-dashboard" alt={`${userData?.username || ''}'s picture`} src={profilePicture || defaultImage } />
+                    </div>
+                    <div className="sidebar-dashboard">
+                        {possibleMatchData && <Sidebar possibleMatches={possibleMatchData}/>}
+                    </div>
+                    {possibleMatchData && <UserDisplay userData={possibleMatchData} />}
+                </div>
+            </div>
+        </div>
+    );
+
+    /*
+    return (
+        <div className="main-page">
+            <div className="overlap-wrapper">
+                <div className="overlap">
+                    <div className="profilepic-box-dashboard">
+                        <img className="profilepic-dashboard" alt={`${userData?.username}'s picture`} src={profilePicture || defaultImage } />
                     </div>
                     <div className="sidebar-dashboard">
                         <Sidebar possibleMatches={possibleMatchData}/>
@@ -85,4 +105,5 @@ export default function MainPage() {
             </div>
         </div>
     );
+        */
 };

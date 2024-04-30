@@ -23,6 +23,7 @@
   position: absolute;
   top: 13px;
   width: 80px;
+  border-radius: 35px;
 }
 
 .main-page .sidebar-dashboard {
