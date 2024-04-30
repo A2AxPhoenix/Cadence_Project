@@ -6,7 +6,6 @@ import PrevSVGButton from '../../components/PrevPicture/PrevPicture';
 import { useNavigate } from 'react-router-dom';
 import "./style.css";
 
-
 export default function SquareDisplay({ userData, isChatActiveState, clickedUserProp }) {
     const [similarUsers, setSimilarUsers] = useState([]);
     const [currentUserIndex, setCurrentUserIndex] = useState(0);
@@ -16,6 +15,7 @@ export default function SquareDisplay({ userData, isChatActiveState, clickedUser
     const [isChatActive, setIsChatActive] = useState(false);
     const [isShaking, setIsShaking] = useState(false);
     const [clickedUser, setClickedUser] = useState(null);
+    const [chatMessages, setChatMessages] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,6 +33,7 @@ export default function SquareDisplay({ userData, isChatActiveState, clickedUser
             const index = similarUsers.findIndex(user => user.username === clickedUserProp.username);
             if (index !== -1) {
                 setCurrentUserIndex(index);  // Ensure this user is set immediately when clicking
+                fetchMessagesAndOtherUser(clickedUserProp.username);
             }
         }
     }, [isChatActiveState, clickedUserProp, similarUsers]);
@@ -49,39 +50,30 @@ export default function SquareDisplay({ userData, isChatActiveState, clickedUser
         }
     }, [currentUserIndex, similarUsers]);
 
-
-    /*
-    useEffect(() => {
-        if (userData && userData.similarUsers) {
-            setSimilarUsers(userData.similarUsers);
-            setIsChatActive(isChatActiveState);
-            setClickedUser(clickedUserProp);
-        }
-        if (isChatActive && clickedUser) {
-            const index = similarUsers.findIndex(user => user.username === clickedUser.username);
-            if (index !== -1) {
-                setCurrentUserIndex(index);
-            }
-        }
-    }, [userData, isChatActiveState, clickedUserProp]);
-
-    useEffect(() => {
-        if (similarUsers[currentUserIndex]) {
-            const user = similarUsers[currentUserIndex];
-            const userPictures = user.profilePic || default_pictures; 
-            const userGenres = user.topGenre;
-            setCurrentPictures(userPictures);
-            setCurrentGenres(userGenres);
-            setCurrentPictureIndex(0); // Reset picture index to show the first picture of the new user
-        }
-    }, [currentUserIndex, similarUsers]);
-    */
-
-
-    // Conditional rendering logic or additional effects here
     if (!userData || !userData.similarUsers) {
         return null; // or return null;
     }
+
+    const fetchMessagesAndOtherUser = async (currentlyChattingWith) => {
+        try {
+            const response = await fetch(`http://localhost:5501/message?otheruser=${currentlyChattingWith}`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const data = await response.json();
+            if (response.ok) {
+                // Set state related to chat data, other user details, etc.
+                console.log('Chats:', data.chats);
+                setChatMessages(data.chats);
+            } else {
+                throw new Error('Failed to fetch messages');
+            }
+        } catch (error) {
+            console.error("Error retrieving messages:", error);
+        }
+    };
 
     //console.log("similarUsers:", similarUsers);
     //console.log("currentGenres", currentGenres);
@@ -110,6 +102,8 @@ export default function SquareDisplay({ userData, isChatActiveState, clickedUser
             setCurrentUserIndex(currentUserIndex - 1);
         }
     };
+
+    console.log("Chats later:", chatMessages);
 
 
     //console.log("profilePic:", userData?.proflePic)
@@ -198,7 +192,14 @@ export default function SquareDisplay({ userData, isChatActiveState, clickedUser
                             <div className='text-wrapper'>{similarUsers[currentUserIndex]?.username || "Matthew"}, {similarUsers[currentUserIndex]?.age || "32"}</div>
 
                             {isChatActive ? (
-                                <ChatBox messages={[]} onSendMessage={() => {}} />
+                                <ChatBox
+                                    messages={[
+                                        { chatMessage: "Test message", sentBy: "Joshua" },
+                                        { chatMessage: "hey!", sentBy: "Simon" }
+                                    ]}
+                                    onSendMessage={() => {}}
+                                    currentUser={userData.username}
+                                />
                             ) : (
                                     <>
                                         <img className="ProfilePicture1" alt="Profile" src={currentPictures[currentPictureIndex]} />

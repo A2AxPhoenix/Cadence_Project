@@ -1,12 +1,12 @@
+import React, { useState } from 'react';
 import './styles.css';
-import { useState } from 'react';
 
-const Chatbox = ({ messages, onSendMessage }) => {
+const Chatbox = ({ messages, onSendMessage, currentUser }) => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSendMessage(message);
+        onSendMessage({ chatMessage: message, sentBy: currentUser, to: currentUser === "Joshua" ? "Simon" : "Joshua" }); // Adjust "to" as needed based on your application's logic
         setMessage('');
     };
 
@@ -14,8 +14,8 @@ const Chatbox = ({ messages, onSendMessage }) => {
         <div className="chatbox">
             <div className="messages">
                 {messages.map((msg, index) => (
-                    <div key={index} className={`message ${msg.sender === 'user' ? 'user-message' : 'other-message'}`}>
-                        {msg.text}
+                    <div key={index} className={`message ${msg.sentBy === currentUser ? 'user-message' : 'other-message'}`}>
+                        {msg.chatMessage}
                     </div>
                 ))}
             </div>
@@ -30,6 +30,6 @@ const Chatbox = ({ messages, onSendMessage }) => {
             </form>
         </div>
     );
-}
+};
 
 export default Chatbox;

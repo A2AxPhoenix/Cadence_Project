@@ -143,8 +143,8 @@ export default function OnboardingPage () {
             <div className="overlap-group-wrapper">
                 <div className="overlap-group">
                     <div className="box"></div>         
-                    <img className="vector" alt="Vector" src="OnboardingSVG.svg" />
-                    <img className="img" alt="Vector" src="OnboardingSVG2.svg" />
+                    <img className="vector" src="OnboardingSVG.svg" />
+                    <img className="img" src="OnboardingSVG2.svg" />
                     <div className="show-me-title">Show me</div>
                     <AudienceSelection onSelect={handleAudienceSelect} />
 

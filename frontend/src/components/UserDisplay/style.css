@@ -446,7 +446,7 @@ left: 0;
 }
 
 .edit-info-button {
-    display: block;
+    display: none;
     position: absolute;
     bottom: 20px; /* Position at the bottom within the PhoneBackGround */
     left: 50%; /* Center horizontally */
