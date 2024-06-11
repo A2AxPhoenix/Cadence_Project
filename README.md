@@ -19,9 +19,9 @@ Cadence is a dating website designed to match users based on their music taste. 
 
 - **Music Taste Matching**: Users are matched based on their favorite genres, artists, and songs.
 - **User Profiles**: Comprehensive profiles with personal information and music preferences.
-- **Music Integration**: Integration with popular music streaming services to fetch and display users' music tastes.
-- **Messaging**: Secure and private messaging system for matched users to communicate.
-- **Discover**: Explore new music and find potential matches through curated playlists and recommendations.
+- **Music Integration** (need to reimplement!): Integration with popular music streaming services to fetch and display users' music tastes.
+- **Messaging** (in progress): Secure and private messaging system for matched users to communicate.
+- **Discover** (planned): Explore new music and find potential matches through curated playlists and recommendations.
 
 <img width="1222" alt="image" src="https://github.com/lynxzen/Cadence_Project/assets/32289143/3edba260-720c-4465-ad95-c776a2fcf04a">
 
