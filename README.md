@@ -56,6 +56,6 @@ SECRET_STR=your_secret_key
 npm start
 ```
 
-##Usage
+## Usage
 1. Sign up for an account and create your profile.
 2. Browse through potential matches and connect with people who share your taste in music.
